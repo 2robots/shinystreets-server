@@ -11,7 +11,7 @@ from shinystreetsapp.serializers import AreaSerializer
 
 
 @api_view(['GET', 'POST'])
-def area_list(request):
+def area_list(request, format=None):
     """
     List all areas, or create a new snippet.
     """
@@ -29,7 +29,7 @@ def area_list(request):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def area_detail(request, pk):
+def area_detail(request, pk, format=None):
     """
     Retrieve, update or delete a snippet instance.
     """              
